@@ -1,0 +1,20 @@
+<doc-blueprint-page
+  [subTitle]="
+    'An OTP Input is a component for entering one-time passwords securely and efficiently.'
+  "
+  [label]="'OTP Input'"
+>
+  <doc-show-case name="otp-input">
+    <doc-show-case-otp-input></doc-show-case-otp-input>
+  </doc-show-case>
+  <doc-prerequisites [preprsAuto]="preprs" name="OTP Input">
+    OTP Input element uses
+    <a class="underline" [routerLink]="['../input']">Input</a> and
+    <a class="underline" [routerLink]="['../listbox']">Listbox</a>. Please
+    ensure they are added to your project if they aren't already.
+  </doc-prerequisites>
+
+  <doc-command-installation name="otp-input"></doc-command-installation>
+  <doc-source-tree name="otp-input" [sourceTree]="sourceTree"></doc-source-tree>
+  <doc-api-info [apiInfo]="apiInfo"></doc-api-info>
+</doc-blueprint-page>

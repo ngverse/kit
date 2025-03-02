@@ -1,0 +1,17 @@
+<div
+  class="checkbox group has-[.ng-invalid]/text-danger inline-flex cursor-pointer items-center gap-2 outline-none"
+  [class.flex-row-reverse]="labelAlign() === 'start'"
+  ktA11yCheckbox
+  [a11yIsChecked]="value()"
+  [a11yIsDisabled]="disabled()"
+  (pressed)="toggle()"
+>
+  <app-checkbox-icon
+    ktA11yIcon
+    class="checkbox-icon group-focus-visible:ring"
+    [checked]="value()"
+  ></app-checkbox-icon>
+  <span>
+    <ng-content></ng-content>
+  </span>
+</div>

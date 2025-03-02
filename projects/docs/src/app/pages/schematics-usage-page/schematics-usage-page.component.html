@@ -1,0 +1,267 @@
+<doc-blog-page label="Schematics Usage">
+  <p>
+    NgVerse schematics make integrating NgVerse into your Angular project a
+    breeze. There are two primary commands you can run:
+  </p>
+  <ul>
+    <li><code>ng add ngverse</code></li>
+    <li><code>ng g ngverse:element</code> (g is an alias for generate)</li>
+  </ul>
+  <p>This page explains each command and its options in detail.</p>
+  <h2>ng g ngverse:element [element-name]</h2>
+  <p>
+    The <code>ng g ngverse:element</code> command adds a NgVerse element to your
+    project. Below are the available parameters:
+  </p>
+
+  <h3>1. <code>name</code> (Required)</h3>
+  <p>The name of the element you want to add.</p>
+  <ul>
+    <li>
+      You can specify the name using either of the following:
+      <ul>
+        <li><code>--name=button</code></li>
+        <li>
+          By passing it as the first positional argument:<br />
+          Example: <code>ng g ngverse:element button</code>
+        </li>
+      </ul>
+    </li>
+    <li>Both methods achieve the same result.</li>
+  </ul>
+  <h3>2. <code>project</code> (Optional)</h3>
+  <p>The name of the Angular project where the element should be added.</p>
+  <ul>
+    <li>
+      If your workspace contains multiple projects, you can specify which one to
+      use by passing the project name.
+    </li>
+    <li>
+      By default, the element is added to the default project specified in
+      <code>angular.json</code>.
+    </li>
+    <li>
+      If your workspace has only one project, the element will be added
+      automatically without needing this parameter.
+    </li>
+  </ul>
+  <h3>3. <code>replace</code> (Optional, default: <code>false</code>)</h3>
+  <p>Determines whether to replace existing files with the same name.</p>
+  <ul>
+    <li>
+      If a folder with the same name as the element already exists, the
+      schematic will throw an error to prevent accidental file deletions.
+    </li>
+    <li>
+      If you want to override the existing files, set <code>replace=true</code>.
+    </li>
+    <li>Example: <code>ng g ngverse:element button --replace=true</code></li>
+  </ul>
+  <p>
+    <strong
+      >⚠️ Use this option with caution to avoid overwriting important
+      files.</strong
+    >
+  </p>
+  <h3>4. <code>includeTests</code> (Optional, default: <code>false</code>)</h3>
+  <p>Specifies whether to include test files for the element.</p>
+  <ul>
+    <li>
+      NgVerse elements come with a full suite of tests to help ensure
+      reliability. However, including tests is optional for the following
+      reasons:
+      <ul>
+        <li>
+          <strong>Code changes may break tests:</strong><br />
+          After modifying an element, tests may fail because the behavior has
+          changed. In this case, you would need to debug and update the test
+          files, which can take extra time and effort.
+        </li>
+        <li>
+          <strong>Test framework compatibility:</strong><br />
+          Our tests are written in Jasmine, so if you're using another framework
+          like Jest, the tests will not run at all.<br />
+          Therefore, tests are disabled by default.
+        </li>
+      </ul>
+    </li>
+    <li>
+      If you want to include test files, use
+      <code>includeTests=true</code>.<br />
+      Example: <code>ng g ngverse:element button --includeTests=true</code>
+    </li>
+  </ul>
+  <p>
+    Keep in mind that we maintain and update our tests regularly. Tests are run
+    on every commit, merge, and release to ensure high quality. We take testing
+    seriously, so you don’t have to worry about test coverage! 🚀
+  </p>
+  <h3>5. <code>path</code> (Optional)</h3>
+  <p>Specifies where to place the element folder.</p>
+  <ul>
+    <li>
+      By default, the element is added to the root folder
+      (<code>/src/app</code>).
+    </li>
+    <li>
+      You can specify a different location using the
+      <code>--path</code> parameter.<br />
+      Example: <code>ng g ngverse:element button --path=core</code><br />
+      This will place the element in <code>/src/app/core</code>.
+    </li>
+    <li>
+      You can also change the destination by including the path in the element
+      name:<br />
+      Example: <code>ng g ngverse:element core/button</code><br />
+      This will place the element in <code>/src/app/core</code>.
+    </li>
+  </ul>
+  <p>
+    Most components are self-isolated, meaning all their dependencies are
+    located within the element folder. However, some components, like
+    <code>select</code>, depend on other elements (e.g.,
+    <code>popover</code> and <code>listbox</code>).
+  </p>
+  <p>
+    In these cases, all related element folders must reside within the same
+    parent directory because the imports are relative and expect the same folder
+    structure. While you can manually update the imports if necessary, we
+    recommend keeping all elements in the same directory to avoid issues.
+  </p>
+  <h3>Global Configuration</h3>
+  <p>
+    You can set a global configuration for the
+    <code>ng g ngverse:element</code> schematics.
+  </p>
+  <p>
+    For example, if you want to place all elements inside the
+    <code>core/ui</code> folder by default, you can add the following
+    configuration in your <code>angular.json</code> file:
+  </p>
+
+  <doc-source-code
+    language="json"
+    [allowCopy]="false"
+    [code]="configCode"
+  ></doc-source-code>
+
+  <p>Once this is configured, running the command:</p>
+  <doc-source-code
+    language="bash"
+    [code]="'ng g ngverse:element button'"
+  ></doc-source-code>
+
+  <p>
+    will automatically place the element inside the <code>core/ui</code> folder,
+    without needing to specify the <code>--path</code> parameter every time.
+  </p>
+  <h2>ng add ngverse</h2>
+
+  <p>
+    The <code>ng add ngverse</code> command configures your project to use the
+    NgVerse library. Let’s first explain what it does, and then describe the
+    parameters you can pass. The command performs the following actions:
+  </p>
+
+  <h3>1. Install <code>&#64;angular/cdk</code></h3>
+  <p>
+    <a href="https://material.angular.io/cdk/categories" target="_blank"
+      >Angular CDK</a
+    >
+    is installed to support features like accessibility, keyboard navigation,
+    and floating panels.
+  </p>
+  <ul>
+    <li>
+      The Angular CDK provides powerful tools that make these features easier to
+      implement, reducing complexity and preventing bugs.
+    </li>
+    <li>
+      Without this library, creating such features from scratch would be a
+      hassle.
+    </li>
+  </ul>
+
+  <h3>2. Install <code>ngverse</code> schematics</h3>
+  <p>
+    NgVerse schematics are installed to automate adding elements to your
+    project.
+  </p>
+  <ul>
+    <li>
+      ⚠️ This step does not install the NgVerse component library itself. You
+      won’t be able to import components directly from
+      <code>ngverse</code>. You'll need to add them manually using the command:
+      <code>ng g ngverse:element</code>.
+    </li>
+  </ul>
+
+  <h3>3. Add <code>ngverse.css</code> to your project</h3>
+  <p>
+    The file <code>ngverse.css</code> is added and imported in your
+    <code>styles.css</code> file.
+  </p>
+  <ul>
+    <li>
+      This file contains predefined CSS variables to style NgVerse elements out
+      of the box, without requiring any additional CSS.
+    </li>
+    <li>
+      It also includes core CSS from <code>&#64;angular/cdk</code> and the
+      <code>normalize.css</code> file for consistent browser styling.<br />
+      (More details about it on the
+      <a [routerLink]="['/doc/theming']">theming page</a>.)
+    </li>
+  </ul>
+
+  <h3>4. Add animations to your project</h3>
+  <p>
+    NgVerse elements rely on animations for smooth transitions and effects. To
+    ensure a good user experience, animation support is added to your app
+    configuration.
+  </p>
+  <ul>
+    <li>
+      The command adds either <code>provideAnimationsAsync</code> or
+      <code>provideNoopAnimations</code> in <code>app.config</code>, based on
+      your prompt choice (explained below).
+    </li>
+  </ul>
+
+  <p>After a successful run, NgVerse is ready to use!</p>
+
+  <h3>Parameters for <code>ng add ngverse</code></h3>
+  <p>The <code>ng add ngverse</code> command has a couple of parameters:</p>
+
+  <h4>1. <code>project</code> (Optional)</h4>
+  <p>Specifies which Angular project to configure.</p>
+  <ul>
+    <li>
+      If no project is provided, the default project in your
+      <code>angular.json</code> file will be used.
+    </li>
+  </ul>
+
+  <h4>2. Prompt choice (During installation)</h4>
+  <p>
+    During installation, you will be prompted to choose how animations should be
+    handled:
+  </p>
+  <ul>
+    <li>
+      <strong>enable:</strong> Adds <code>provideAnimationsAsync</code> in
+      <code>app.config</code>.<br />
+      This enables animations for NgVerse elements.
+    </li>
+    <li>
+      <strong>noop:</strong> Adds <code>provideNoopAnimations()</code> in
+      <code>app.config</code>.<br />
+      This disables animations completely but ensures NgVerse elements won’t
+      produce runtime errors.
+    </li>
+    <li>
+      <strong>skip:</strong> Skips changes to <code>app.config</code>.<br />
+      Choose this option if your project already uses animations.
+    </li>
+  </ul>
+</doc-blog-page>

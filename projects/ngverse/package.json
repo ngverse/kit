@@ -1,0 +1,32 @@
+{
+  "name": "ngverse",
+  "version": "2.0.0",
+  "schematics": "./schematics/collection.json",
+  "keywords": [
+    "angular",
+    "angular-components",
+    "typescript",
+    "components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukonik/ngverse"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=19.0.0",
+    "@angular/core": ">=19.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.schematics.json",
+    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/ngverse/ && cp ../../README.md ../../dist/ngverse/",
+    "schema:watch": "tsc -w -p tsconfig.schematics.json"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "copyfiles": "file:../../node_modules/copyfiles",
+    "typescript": "file:../../node_modules/typescript"
+  },
+  "sideEffects": false
+}

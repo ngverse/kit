@@ -1,0 +1,16 @@
+:host {
+  display: inline-flex;
+}
+
+.checkbox {
+  &.ng-invalid.ng-touched {
+    color: var(--color-danger);
+  }
+  &[aria-disabled='true'] {
+    color: var(--color-disabled-foreground);
+  }
+
+  &.start {
+    flex-direction: row-reverse;
+  }
+}

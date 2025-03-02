@@ -1,0 +1,17 @@
+<div class="blueprint-page px-5 pt-10 lg:px-0">
+  <div>
+    <h1 class="mb-2 text-4xl font-bold capitalize lg:text-5xl">
+      {{ label() }}
+    </h1>
+    @if (subTitle()) {
+      <p class="m-0 text-lg font-light">{{ subTitle() }}</p>
+    }
+  </div>
+
+  <ng-content select="doc-show-case"></ng-content>
+  <ng-content select="doc-prerequisites"></ng-content>
+  <ng-content select="doc-command-installation"></ng-content>
+  <ng-content select="doc-source-tree"></ng-content>
+
+  <ng-content select="doc-api-info"></ng-content>
+</div>
