@@ -34,10 +34,10 @@ const routes: SidebarGroup[] = [
   },
 ];
 @Component({
-  selector: 'doc-kit-container-page',
+  selector: 'doc-doc-container-page',
   imports: [RouterOutlet, SidebarComponent],
-  templateUrl: './kit-container-page.component.html',
-  styleUrl: './kit-container-page.component.css',
+  templateUrl: './doc-container-page.component.html',
+  styleUrl: './doc-container-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KitContainerPageComponent {

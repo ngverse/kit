@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { ApiTableComponent } from '../api-section/api-table/api-table.component';
-import { ApiProperty } from '../kit-page.types';
+import { ApiProperty } from '../doc-page.types';
 
 @Component({
   selector: 'doc-api-properties',

@@ -13,9 +13,9 @@ import {
 } from '@ngverse/kit';
 
 @Component({
-  selector: 'doc-kit-page',
-  templateUrl: './kit-page.component.html',
-  styleUrl: './kit-page.component.css',
+  selector: 'doc-doc-page',
+  templateUrl: './doc-page.component.html',
+  styleUrl: './doc-page.component.css',
   imports: [A11yTabListDirective, A11yTabDirective],
   hostDirectives: [A11yTabGroupDirective],
   providers: [A11yTabStack],
