@@ -4,31 +4,11 @@ import { SidebarComponent, SidebarGroup } from '../sidebar/sidebar.component';
 
 const routes: SidebarGroup[] = [
   {
-    name: 'A11y',
+    name: 'UI',
     children: [
       {
         name: 'Accordion',
-        url: '/kit/a11y-accordion',
-      },
-      {
-        name: 'Tab',
-        url: '/kit/a11y-tab',
-      },
-      {
-        name: 'Checkbox',
-        url: '/kit/a11y-checkbox',
-      },
-      {
-        name: 'Alert',
-        url: '/kit/a11y-alert',
-      },
-      {
-        name: 'Session Storage',
-        url: '/kit/session-storage',
-      },
-      {
-        name: 'Local Storage',
-        url: '/kit/local-storage',
+        url: '/docs/accordion',
       },
     ],
   },
@@ -40,6 +20,6 @@ const routes: SidebarGroup[] = [
   styleUrl: './doc-container-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class KitContainerPageComponent {
+export class DocContainerPageComponent {
   routes = routes;
 }
