@@ -1,8 +1,7 @@
 module.exports = {
   branches: ['main'],
   repositoryUrl: 'https://github.com/ngverse/kit',
-  preset: 'angular',
-  releaseRules: [{ type: 'refactor', release: 'patch' }],
+  preset: 'conventionalcommits',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
