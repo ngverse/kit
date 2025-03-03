@@ -1,6 +1,9 @@
 {
   "name": "@ngverse/kit",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@angular/common": ">=19.1.0",
     "@angular/core": ">=19.1.0"
