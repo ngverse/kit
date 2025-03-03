@@ -23,7 +23,7 @@
     "build:docs": "ng build --project=docs",
     "check:docs": "npm run build:docs && ng lint docs && npm run format:check",
     "check:kit": "ng lint kit && npm run format:check && ng test --no-watch --no-progress --browsers=ChromeHeadless --project=kit && ng build --project=kit",
-    "watch:kit": "ng build --project=kit --watch"
+    "watch:kit": "ng build --project=kit --configuration=development --watch"
   },
   "lint-staged": {
     "**/*.{html,ts,json,css,md}": "prettier --write"

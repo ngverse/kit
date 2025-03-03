@@ -1,10 +1,9 @@
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { Component, computed, input, signal } from '@angular/core';
-import { Highlight } from 'ngx-highlightjs';
 import { EMPTY_FILE_TOKEN } from '../../../services/file.service';
 @Component({
   selector: 'doc-source-code',
-  imports: [Highlight, ClipboardModule],
+  imports: [ClipboardModule],
   templateUrl: './source-code.component.html',
   styleUrl: './source-code.component.css',
 })

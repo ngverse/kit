@@ -1,12 +1,16 @@
-import { _IdGenerator } from '@angular/cdk/a11y';
-import { Directive, inject } from '@angular/core';
+import { Directive, inject, input } from '@angular/core';
+import { parentOrNewStack } from '../stack/stack-providers';
+import { ACCORDION_STACK } from './accordion-stack';
 
 @Directive({
-  selector: '[ktA11yAccordion]',
+  selector: '[kitAccordion]',
+  providers: [parentOrNewStack(ACCORDION_STACK)],
 })
-export class A11yAccordionDirective {
-  private idGenerator = inject(_IdGenerator);
+export class AccordionDirective {
+  private _stack = inject(ACCORDION_STACK);
+  multi = input(false);
 
-  panelId = this.idGenerator.getId('kt-a11y-accordion-panel-');
-  titleId = this.idGenerator.getId('kt-a11y-accordion-title-');
+  constructor() {
+    this._stack.setHost(this);
+  }
 }

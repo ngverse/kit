@@ -1,18 +1,19 @@
-import { Directive, inject, input } from '@angular/core';
-import { A11yAccordionDirective } from './accordion.directive';
+import { Directive, inject } from '@angular/core';
+import { AccordionItemDirective } from './accordion-item.directive';
 
 @Directive({
-  selector: 'button[ktA11yAccordionTitle]',
+  selector: 'button[kitAccordionTitle]',
   host: {
     '[attr.aria-controls]': 'panelId',
-    '[attr.aria-expanded]': 'a11yIsExpanded()',
+    '[attr.aria-expanded]': 'accordionItem.expanded()',
     '[id]': 'id',
+    '(click)': 'accordionItem.toggle()',
   },
 })
-export class A11yAccordionTitleDirective {
-  a11yIsExpanded = input.required<boolean>();
+export class AccordionTitleDirective {
+  accordionItem = inject(AccordionItemDirective);
 
-  private accordion = inject(A11yAccordionDirective);
+  private accordion = inject(AccordionItemDirective);
 
   readonly panelId = this.accordion.panelId;
   readonly id = this.accordion.titleId;

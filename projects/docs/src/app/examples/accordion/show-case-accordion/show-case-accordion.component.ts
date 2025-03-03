@@ -1,28 +1,28 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ChevronDownIcon } from '@ngverse/icons-lu';
 import {
-  A11yAccordionDirective,
-  A11yAccordionGroupDirective,
-  A11yAccordionHeaderDirective,
-  A11yAccordionPanelDirective,
-  A11yAccordionTitleDirective,
+  AccordionDirective,
+  AccordionHeaderDirective,
+  AccordionItemDirective,
+  AccordionPanelDirective,
+  AccordionTitleDirective,
 } from '@ngverse/kit';
 
 @Component({
-  selector: 'doc-show-case-a11y-accordion',
+  selector: 'doc-show-case-accordion',
   imports: [
-    A11yAccordionGroupDirective,
-    A11yAccordionDirective,
-    A11yAccordionHeaderDirective,
-    A11yAccordionTitleDirective,
-    A11yAccordionPanelDirective,
+    AccordionDirective,
+    AccordionItemDirective,
+    AccordionTitleDirective,
+    AccordionPanelDirective,
+    AccordionHeaderDirective,
     ChevronDownIcon,
   ],
-  templateUrl: './show-case-a11y-accordion.component.html',
-  styleUrl: './show-case-a11y-accordion.component.css',
+  templateUrl: './show-case-accordion.component.html',
+  styleUrl: './show-case-accordion.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ShowCaseA11yAccordionComponent {
+export class ShowCaseAccordionComponent {
   expansions = signal([false, false]);
 
   accordions = [

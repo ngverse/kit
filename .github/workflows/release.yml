@@ -28,7 +28,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PATH }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run semantic-release
-
-      - name: Trigger Deployment
-        if: success()
-        run: npm run deploy

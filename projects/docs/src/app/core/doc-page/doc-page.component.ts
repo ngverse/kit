@@ -5,23 +5,14 @@ import {
   input,
   signal,
 } from '@angular/core';
-import {
-  A11yTabDirective,
-  A11yTabGroupDirective,
-  A11yTabListDirective,
-  A11yTabStack,
-} from '@ngverse/kit';
 
 @Component({
   selector: 'doc-doc-page',
   templateUrl: './doc-page.component.html',
   styleUrl: './doc-page.component.css',
-  imports: [A11yTabListDirective, A11yTabDirective],
-  hostDirectives: [A11yTabGroupDirective],
-  providers: [A11yTabStack],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class KitPageComponent {
+export class DocPageComponent {
   sections = ['Overview', 'API', 'Examples'];
   activeSection = signal(this.sections[0]);
   name = input.required<string>();

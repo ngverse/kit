@@ -8,7 +8,7 @@ const routes: SidebarGroup[] = [
     children: [
       {
         name: 'Accordion',
-        url: '/doc/accordion',
+        url: '/docs/accordion',
       },
     ],
   },

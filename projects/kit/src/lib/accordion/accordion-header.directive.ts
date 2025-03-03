@@ -1,12 +1,12 @@
 import { Directive, input } from '@angular/core';
 
 @Directive({
-  selector: '[ktA11yAccordionHeader]',
+  selector: '[kitAccordionHeader]',
   host: {
     role: 'heading',
     '[attr.aria-level]': 'a11yAriaLevel()',
   },
 })
-export class A11yAccordionHeaderDirective {
+export class AccordionHeaderDirective {
   a11yAriaLevel = input<string>('3');
 }

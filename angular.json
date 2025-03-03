@@ -49,7 +49,7 @@
             "styles": ["projects/docs/src/styles.css"],
             "scripts": [],
             "server": "projects/docs/src/main.server.ts",
-            "prerender": true,
+            "prerender": false,
             "ssr": false
           },
           "configurations": {
@@ -124,7 +124,7 @@
       "projectType": "library",
       "root": "projects/kit",
       "sourceRoot": "projects/kit/src",
-      "prefix": "kt",
+      "prefix": "kit",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
