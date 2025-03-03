@@ -1,18 +1,17 @@
 <h5 class="my-0 mb-3 text-lg font-medium">Showcase</h5>
-<ng-content></ng-content>
-<!-- <doc-card class="block" [gap]="false">
-  <app-tab-group [selectedIndex]="0" (tabChanged)="tabChanged($event)">
-    <app-tab label="PREVIEW">
+<doc-card class="block" [gap]="false">
+  <doc-tab-group [selectedIndex]="0" (tabChanged)="tabChanged($event)">
+    <doc-tab label="PREVIEW">
       <ng-content></ng-content>
-    </app-tab>
+    </doc-tab>
     @for (item of tabs; track $index) {
-      <app-tab [label]="item | uppercase" [gap]="false">
+      <doc-tab [label]="item | uppercase" [gap]="false">
         <doc-source-code
           [outline]="false"
           [code]="code()"
           [language]="language()"
         ></doc-source-code>
-      </app-tab>
+      </doc-tab>
     }
-  </app-tab-group>
-</doc-card> -->
+  </doc-tab-group>
+</doc-card>
