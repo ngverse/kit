@@ -1,12 +1,26 @@
-import { Directive, input } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostAttributeToken,
+  inject,
+} from '@angular/core';
 
 @Directive({
   selector: '[kitAccordionHeader]',
   host: {
     role: 'heading',
-    '[attr.aria-level]': 'a11yAriaLevel()',
   },
 })
 export class AccordionHeaderDirective {
-  a11yAriaLevel = input<string>('3');
+  private _element = inject<ElementRef<HTMLElement>>(ElementRef);
+
+  constructor() {
+    const ariaLevel = inject(new HostAttributeToken('aria-level'), {
+      optional: true,
+    });
+
+    if (!ariaLevel) {
+      this._element.nativeElement.setAttribute('aria-hidden', 'true');
+    }
+  }
 }
