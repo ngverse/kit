@@ -1,6 +1,3 @@
-import { ButtonComponent } from '@/ui/button/button.component';
-import { DarkModeToggleComponent } from '@/ui/dark-mode/dark-mode-toggle.component';
-import { IconComponent } from '@/ui/icon/icon.component';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { afterNextRender, Component, inject } from '@angular/core';
@@ -9,20 +6,11 @@ import docsearch from '@docsearch/js';
 import { ExternalLinkIcon } from '@ngverse/icons-lu';
 import { LucideAngularModule, Menu } from 'lucide-angular';
 import { filter, take, takeUntil } from 'rxjs';
-import { DividerComponent } from '../../../../../ngverse/src/lib/divider/divider.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'doc-header',
-  imports: [
-    RouterLink,
-    LucideAngularModule,
-    ButtonComponent,
-    IconComponent,
-    DarkModeToggleComponent,
-    ExternalLinkIcon,
-    DividerComponent,
-  ],
+  imports: [RouterLink, LucideAngularModule, ExternalLinkIcon],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

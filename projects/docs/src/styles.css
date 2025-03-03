@@ -5,7 +5,63 @@
 @import './docsearch.css';
 @import './highlight-dark.css';
 @import './highlight-light.css';
-@import '../../ngverse/src/lib/ngverse';
+
+:root {
+  --field-height: 36px;
+  --field-padding: 6px 10px;
+  --border-radius: 6px;
+}
+
+@theme static {
+  --color-background: white;
+  --color-foreground: #030712;
+  --color-primary: #2563eb;
+  --color-primary-foreground: white;
+
+  --color-inverse: #1f2937;
+  --color-inverse-foreground: white;
+
+  --color-secondary: #4b5563;
+  --color-secondary-foreground: white;
+
+  --color-accent: #f3f4f6;
+  --color-accent-foreground: #111827;
+
+  --color-danger: #dc2626;
+  --color-danger-foreground: white;
+
+  --color-warning: #ea580c;
+  --color-warning-foreground: white;
+
+  --color-success: #16a34a;
+  --color-success-foreground: white;
+
+  --color-disabled: #f9fafb;
+  --color-disabled-foreground: #9ca3af;
+
+  --color-surface: #f9fafb;
+
+  --color-surface-2: #d1d5db;
+
+  --overlay: 0, 0, 0;
+
+  --color-divider: #cbd5e1;
+  --color-border: #d1d5db;
+  --border: 1px solid var(--color-border);
+
+  --color-ring: #9ca3af;
+
+  --color-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  --color-mute-start: #e0e0e0;
+  --color-mute-end: #f0f0f0;
+}
+
+:root.cdk-overlay-backdrop {
+  background: rgba(var(--overlay), 0.3);
+}
 
 *,
 ::after,
