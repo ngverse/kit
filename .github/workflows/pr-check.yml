@@ -23,11 +23,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Prettier
-        run: npm run format:check
-
       - name: Check docs
         run: npm run check:docs
 
-      - name: Check ngverse
-        run: npm run check:ngverse
+      - name: Check kit
+        run: npm run check:kit

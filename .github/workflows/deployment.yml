@@ -8,7 +8,5 @@ jobs:
     name: Deployment
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Vercel deployment
-        env:
-          DEPLOY_HOOK: ${{ secrets.VERCEL_PATH }}
-        run: curl -X POST "$DEPLOY_HOOK"
+      - name: Trigger Deployment
+        run: npm run deploy

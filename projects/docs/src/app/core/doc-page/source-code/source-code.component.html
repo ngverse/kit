@@ -1,0 +1,25 @@
+@if (showCopy()) {
+  <doc-icon-button
+    [cdkCopyToClipboard]="code()"
+    (click)="copy()"
+    class="copy-button"
+  >
+    @if (copied()) {
+      <!-- <app-icon name="check" width="20" height="20"></app-icon> -->
+    } @else {
+      <!-- <app-icon name="copy" width="20" height="20"></app-icon> -->
+    }
+  </doc-icon-button>
+}
+
+<!-- <app-card
+  [gap]="false"
+  class="block"
+  [surface]="surface()"
+  [outline]="outline()"
+>
+  <pre
+    class="not-prose m-0 max-h-[600px] overflow-auto text-xs"
+  ><code class="rounded-md source-code" [highlight]="code()" [language]="code() ? language() : 'plaintext' ">
+  </code></pre>
+</app-card> -->
