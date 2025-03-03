@@ -1,7 +1,7 @@
 import { IconRegistry } from '@/ui/icon/icon.registry';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './pages/header/header.component';
+import { HeaderComponent } from './core/header/header.component';
 
 @Component({
   selector: 'doc-root',

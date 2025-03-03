@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ShowCaseComponent } from '../../blueprint/show-case/show-case.component';
 import { ApiSectionComponent } from '../../core/kit-page/api-section/api-section.component';
 import { KitPageComponent } from '../../core/kit-page/kit-page.component';
 import { ApiSection } from '../../core/kit-page/kit-page.types';
 import { OverviewSectionHeaderComponent } from '../../core/kit-page/overview-section/overview-section-header/overview-section-header.component';
 import { OverviewSectionComponent } from '../../core/kit-page/overview-section/overview-section.component';
+import { ShowCaseComponent } from "../../core/kit-page/show-case/show-case.component";
 import { ShowCaseA11yTabComponent } from '../../examples/a11y-tab/show-case-a11y-tab/show-case-a11y-tab.component';
 
 @Component({
