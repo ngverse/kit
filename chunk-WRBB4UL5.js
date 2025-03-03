@@ -1,0 +1,1 @@
+import{$a as a,Fa as n,Sa as t,Ta as c}from"./chunk-3QVRXHJC.js";import"./chunk-C6Q5SG76.js";var i=class o{static \u0275fac=function(e){return new(e||o)};static \u0275cmp=n({type:o,selectors:[["doc-accordion-page"]],decls:2,vars:0,template:function(e,r){e&1&&(t(0,"p"),a(1,"accordion-page works!"),c())},encapsulation:2,changeDetection:0})};export{i as AccordionPageComponent};
