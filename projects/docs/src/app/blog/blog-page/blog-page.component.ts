@@ -17,7 +17,7 @@ export class BlogPageComponent {
   constructor() {
     effect(() => {
       const label = this.label();
-      this.title.setTitle(`${label} | ngverse`);
+      this.title.setTitle(`${label} | @ngverse/kit`);
       this.meta.addTags([
         { property: 'og:title', content: this.label() },
         {
