@@ -1,10 +1,8 @@
-import { UpperCasePipe } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
 import { FileService } from '../../../services/file.service';
 
 @Component({
   selector: 'doc-show-case',
-  imports: [UpperCasePipe],
   templateUrl: './show-case.component.html',
   styleUrl: './show-case.component.css',
 })
